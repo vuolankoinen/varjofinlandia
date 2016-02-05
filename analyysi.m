@@ -13,8 +13,8 @@ uskottavuudet = zeros(length(data), 4);
 for (san = 11:length(data)-11)
   frekv1osa(data(san)) = frekv1osa(data(san)) + 1;
   frekv2osa(data(san)) = frekv2osa(data(san)) - 1;
-  ln_toden1 = log((frekv1osa + 1)/(san + length(frekv))); % Laplace-korjaus on mukana näissä.
-  ln_toden2 = log((frekv2osa + 1)/(length(data) - san + length(frekv))); % Laplace-korjaus on mukana näissä.
+  ln_toden1 = log((frekv1osa + 1)./(san + length(frekv))); % Laplace-korjaus on mukana näissä.
+  ln_toden2 = log((frekv2osa + 1)./(length(data) - san + length(frekv))); % Laplace-korjaus on mukana näissä.
   uskottavuudet(san, 1) = sum(ln_toden1.*frekv1osa);
   uskottavuudet(san, 2) = sum(ln_toden2.*frekv1osa);
   uskottavuudet(san, 3) = sum(ln_toden1.*frekv2osa);
@@ -22,5 +22,8 @@ for (san = 11:length(data)-11)
 end
 uskottavuudet = uskottavuudet(11:end-11,:);
 
-
+erot1 = uskottavuudet(:,1) ./ uskottavuudet(:,2); % Mitä suurempia nämä ovat,
+erot2 = uskottavuudet(:,4) ./ uskottavuudet(:,3); % sitä uskottavampi jakopiste.
+erot = erot1.*erot2;
+plot (linspace(min(erot),max(erot),length(erot)), erot) % Käyrän piikit ovat lupaavia jakopisteitä.
 1
