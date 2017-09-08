@@ -1,0 +1,2 @@
+Tässä aineistoksi on otettu teksti, johon on liitetty peräkkäin Wikipedia-artikkeli ja artikkeli sanomalehdestä. Jakopiste on siis tunnettu, ja sijoittuu sanojen 281 ja 282 väliin.
+Oheiset kuvat näyttävät jakopisteen etsimiseen käytetyn menetelmän tuloksen. Värillinen pystyviiva osoittaa todellisen jakopisteen paikan, ja menetelmä näyttää löytävän sen hyvin.

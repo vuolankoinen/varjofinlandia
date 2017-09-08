@@ -1,5 +1,7 @@
 # Laskee tietyn jakopisteen log-uskottavuuden säädettynä.
 
+source("frekvenssit.R")
+
 jaon_normalisoitu_uskottavuus <- function (sanat, jakopiste) {
 
     fr1 <- frekvenssit(sanat[1:jakopiste])
